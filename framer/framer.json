@@ -1,0 +1,17 @@
+{
+  "!name": "framer",
+  "Layer": {
+    "!doc": "Layers are the basic containers for Framer. They have positioning, size, visual properties and a hierarchy. They can contain images, videos, text or even arbitrary html.",
+    "!url": "http://framerjs.com/docs/#layer.layer",
+    "!type": "fn(options: object)",
+    "prototype": {
+      "id": "number",
+      "name": "string",
+      "x": "number",
+      "y": "number",
+      "z": "number",
+      "width": "number",
+      "height": "number"
+    }
+  }
+}

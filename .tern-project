@@ -1,0 +1,6 @@
+{
+  "libs": [
+    "underscore",
+    "framer/framer"
+  ]
+}
