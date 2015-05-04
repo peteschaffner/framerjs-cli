@@ -2,6 +2,10 @@
 # myModule = require "myModule"
 # Reference the contents by name, like myModule.myFunction() or myModule.myVar
 
+exports.data = require "./data.json"
+
+exports.image = __dirname + "/background.png"
+
 exports.myVar = "myVariable"
 
 exports.myFunction = ->

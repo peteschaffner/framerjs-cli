@@ -5,6 +5,11 @@
 
 module = require "myModule"
 
+background = new BackgroundLayer
+  image: module.image
+
+Utils.labelLayer background, module.data.title
+
 iconLayer = new Layer width:256/2, height:256/2, image:"images/framer-icon.png"
 iconLayer.center()
 
