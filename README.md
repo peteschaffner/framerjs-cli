@@ -11,8 +11,8 @@ current implementation of this tool requires [Node][1] to be installed.
 
 - CoffeeScript compilation. It will handle CoffeeScript files, JavaScript files,
 or a mix of the two.
-- Local server for previewing/debugging. Visit http://localhost:3000 in your
-browser.
+- Local server for previewing/debugging. Visit
+[http://localhost:3000](http://localhost:3000) in your browser.
 - Handles true [Node-style modules][2]. Place any code, assets, etc. that you
 want in the `modules` folder and `require` them in your main `app.coffee` file.
 See the `/modules/myModule` example for reference.
