@@ -1,7 +1,7 @@
 {
-  "name": "drawcode",
+  "name": "myProject",
   "version": "0.0.1",
-  "description": "My drawing.",
+  "description": "My amazing project.",
   "main": "app.coffee",
   "devDependencies": {
     "browserify": "^10.0.0",
@@ -11,7 +11,7 @@
   },
   "scripts": {
     "update-framer": "curl -o framer/framer.js http://builds.framerjs.com/latest/framer.js && curl -o framer/framer.js.map http://builds.framerjs.com/latest/framer.js.map",
-    "start": "NODE_PATH=./modules budo app.coffee:bundle.js --live --port 3000 --no-stream -- --transform coffeeify --extension .coffee | garnish",
+    "start": "NODE_PATH=./modules budo app.coffee:bundle.js --live --port 3000 -- --transform coffeeify --extension .coffee | garnish",
     "build": "NODE_PATH=./modules browserify --transform coffeeify --extension .coffee app.coffee > bundle.js"
   }
 }

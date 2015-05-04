@@ -14,15 +14,22 @@ or a mix of the two.
 - Local server for previewing/debugging. Visit http://localhost:3000 in your
 browser.
 - Handles true [Node-style modules][2]. Place any code, assets, etc. that you
-want in this folder and `require` them in your main `app.coffee` file. See the
-`/modules/myModule` example for reference.
+want in the `modules` folder and `require` them in your main `app.coffee` file.
+See the `/modules/myModule` example for reference.
 - Live reloading when any of the files in your dependency tree change.
-- *WIP:* Intelligent completions that are scoped appropriately. This uses
+- **WIP:** Intelligent completions that are scoped appropriately. This uses
 [Tern][3] and requires using an editor with a [Tern plugin][4].
 - A build command for sharing the project. Just `$ make build` and open
 `index.html` in your browser (also is accessible on any static file server).
 
 ## Instructions
+
+**NOTE:** Requires [Node][1].
+
+1. `$ git clone https://github.com/peteschaffner/framercli.git myProject`
+2. `$ cd myProject`
+3. `$ make` (spin up server and design)
+4. `$ make build` (build for distribution)
 
 [1]: https://nodejs.org/
 [2]: https://nodejs.org/api/modules.html#modules_folders_as_modules
