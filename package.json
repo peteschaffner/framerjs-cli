@@ -4,6 +4,7 @@
   "description": "My amazing project.",
   "main": "app.coffee",
   "devDependencies": {
+    "babelify": "^6.0.2",
     "browserify": "^10.0.0",
     "budo": "^4.0.0",
     "coffeeify": "^1.1.0",
@@ -11,7 +12,7 @@
   },
   "scripts": {
     "update-framer": "curl -o framer/framer.js http://builds.framerjs.com/latest/framer.js && curl -o framer/framer.js.map http://builds.framerjs.com/latest/framer.js.map",
-    "start": "NODE_PATH=./modules budo app.coffee:bundle.js --live --port 3000 -- --transform coffeeify --extension .coffee | garnish",
-    "build": "NODE_PATH=./modules browserify --transform coffeeify --extension .coffee app.coffee > bundle.js"
+    "start": "NODE_PATH=./modules budo app.coffee:bundle.js --live --port 3000 -- --transform coffeeify --transform babelify --extension .coffee | garnish",
+    "build": "NODE_PATH=./modules browserify --transform coffeeify --transform babelify --extension .coffee app.coffee > bundle.js"
   }
 }
