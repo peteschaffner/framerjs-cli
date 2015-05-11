@@ -1,6 +1,8 @@
 {
   "libs": [
+    "ecma6",
     "underscore",
     "framer/framer"
-  ]
+  ],
+  "loadEagerly": ["framer/framer.js"]
 }
