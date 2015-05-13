@@ -12,7 +12,7 @@ var path = require('path');
  */
 
 module.exports = function (file) {
-  var regex = /'(.+\.(png|gif|jpeg|jpg|svg|mp4))'/ig;
+  var regex = /['"](.+\.(png|gif|jpeg|jpg|svg|mp4))['"]/ig;
 
   return through(function (buf, enc, next) {
     this.push(buf.toString('utf8').replace(regex, function (m, fpath) {
