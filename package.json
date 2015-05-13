@@ -12,7 +12,7 @@
   },
   "scripts": {
     "update-framer": "curl -o framer/framer.js http://builds.framerjs.com/latest/framer.js && curl -o framer/framer.js.map http://builds.framerjs.com/latest/framer.js.map",
-    "start": "NODE_PATH=./modules budo app.js:bundle.js --live --port 3000 -- --transform coffeeify --transform babelify --extension .coffee | garnish",
-    "build": "NODE_PATH=./modules browserify --transform coffeeify --transform babelify --extension .coffee app.js > bundle.js"
+    "start": "NODE_PATH=./modules budo app.js:bundle.js --live --port 3000 -- --transform ./framer/framer_path_transform.js --transform coffeeify --transform babelify --extension .coffee | garnish",
+    "build": "NODE_PATH=./modules browserify --transform ./framer/framer_path_transform.js --transform coffeeify --transform babelify --extension .coffee app.js > bundle.js"
   }
 }

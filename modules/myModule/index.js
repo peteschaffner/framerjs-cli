@@ -5,7 +5,7 @@
 
 exports.data = require('./data.json')
 
-exports.image = __dirname + '/background.png'
+exports.image = 'background.png'
 
 exports.myVar = 'myVariable'
 
