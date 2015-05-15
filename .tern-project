@@ -1,12 +1,6 @@
 {
-  "libs": [
-    "browser",
-    "ecma6",
-    "underscore",
-    "framer/framer"
-  ],
-  "loadEagerly": ["framer/framer.js"],
   "plugins": {
-    "complete_strings": {}
+    "complete_strings": {},
+    "node": {}
   }
 }

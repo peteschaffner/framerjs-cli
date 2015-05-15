@@ -1,19 +1,20 @@
 {
-  "name": "my-project",
+  "name": "framer-cli",
   "version": "0.0.1",
-  "description": "My amazing project.",
-  "main": "app.js",
-  "devDependencies": {
+  "description": "A Framer.js CLI for quickly building modular prototypes.",
+  "repository": "peteschaffner/framer-cli",
+  "bin": {
+    "framer": "./bin/framer.js"
+  },
+  "dependencies": {
     "babelify": "^6.0.2",
-    "browserify": "^10.0.0",
     "budo": "^4.0.0",
     "coffeeify": "^1.1.0",
+    "commander": "^2.8.1",
+    "framer-module": "peteschaffner/framer-module",
+    "framer-project": "peteschaffner/framer-project",
     "framerify": "peteschaffner/framerify",
-    "garnish": "^2.1.3"
-  },
-  "scripts": {
-    "update-framer": "curl -o framer/framer.js http://builds.framerjs.com/latest/framer.js && curl -o framer/framer.js.map http://builds.framerjs.com/latest/framer.js.map",
-    "start": "NODE_PATH=./modules budo app.js:bundle.js --live --port 3000 -- --transform framerify --transform coffeeify --transform babelify --extension .coffee | garnish",
-    "build": "NODE_PATH=./modules browserify --transform framerify --transform coffeeify --transform babelify --extension .coffee app.js > bundle.js"
+    "fs-extra": "^0.18.3",
+    "sync-request": "^2.0.1"
   }
 }
