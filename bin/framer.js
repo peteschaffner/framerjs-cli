@@ -77,7 +77,7 @@ b.transform(coffeeify);
 b.transform(babelify, { global: true });
 b.transform(resolveAssetPaths, { global: true });
 b.on('error', console.error);
-if (program.module) b.require('./index.js'); else b.add('index.js');
+if (program.module) b.require('.'); else b.add('index.js');
 
 // create build file for distribution
 b.on('bundle', function(bundle) {
