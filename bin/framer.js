@@ -9,6 +9,7 @@ var browserify = require('browserify');
 var chokidar = require('chokidar');
 var coffeeify = require('coffeeify');
 var connect = require('connect');
+var exec = require('child_process').exec;
 var fs = require('fs-extra');
 var livereload = require('connect-livereload');
 var livereloadServer = require('tiny-lr');
@@ -109,6 +110,8 @@ server.listen(program.port, function () {
     program.port,
     htmlFile
   );
+
+  exec('open "http://localhost:' + program.port + '/' + htmlFile + '"');
 });
 
 
