@@ -8,6 +8,7 @@ var babelify = require('babelify');
 var browserify = require('browserify');
 var chokidar = require('chokidar');
 var coffeeify = require('coffeeify');
+var colors = require('colors/safe');
 var connect = require('connect');
 var exec = require('child_process').exec;
 var fs = require('fs-extra');
@@ -47,7 +48,7 @@ if (!!!fs.readdirSync(dir).length) {
   var projectType = program.module ? 'module' : 'project';
   var toPath = '../node_modules/framer-' + projectType;
 
-  console.log('\033[90mCreating %s...', projectType);
+  console.log(colors.grey('Creating %s...'), projectType);
 
   fs.copySync(path.resolve(__dirname, toPath), dir);
   updateFramer();
@@ -76,7 +77,6 @@ var b = browserify({
 b.transform(coffeeify);
 b.transform(babelify, { global: true });
 b.transform(resolveAssetPaths, { global: true });
-b.on('error', console.error);
 if (program.module) b.require('.'); else b.add('index.js');
 
 // create build file for distribution
@@ -89,7 +89,13 @@ b.on('bundle', function(bundle) {
 // bundle on request
 server.use(function (req, res, next) {
   if (req.url !== '/.bundle.js') return next();
-  b.bundle().pipe(res);
+
+  b.bundle()
+    .on('error', function(err) {
+      console.log(colors.red('\nError: ') + err.message);
+      this.emit('end');
+    })
+    .pipe(res);
 });
 
 // static files
@@ -105,7 +111,7 @@ server.listen(program.port, function () {
   var htmlFile = program.module ? 'test.html' : '';
 
   console.log(
-    '\033[90m%s running at \033[36mhttp://localhost:%s/%s',
+    colors.grey('%s running at ') + colors.cyan('http://localhost:%s/%s'),
     projectType,
     program.port,
     htmlFile
@@ -123,7 +129,7 @@ server.listen(program.port, function () {
 function updateFramer() {
   if (program.module) return;
 
-  console.log('\033[90mUpdating Framer.js...');
+  console.log(colors.grey('Updating Framer.js...'));
 
   ['framer.js', 'framer.js.map'].forEach(function(file) {
     var res = request('GET', 'http://builds.framerjs.com/latest/' + file);

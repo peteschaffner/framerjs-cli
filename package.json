@@ -11,6 +11,7 @@
     "browserify": "^10.2.0",
     "chokidar": "^1.0.1",
     "coffeeify": "^1.1.0",
+    "colors": "^1.1.0",
     "commander": "^2.8.1",
     "connect": "^3.3.5",
     "connect-livereload": "^0.5.3",
