@@ -74,7 +74,7 @@ var b = browserify({
   basedir: dir
 });
 
-b.transform(coffeeify);
+b.transform(coffeeify, { global: true });
 b.transform(babelify, { global: true });
 b.transform(resolveAssetPaths, { global: true });
 if (program.module) b.require('.'); else b.add('index.js');
