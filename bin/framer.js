@@ -148,8 +148,10 @@ function resolveAssetPaths(file) {
 
   return through(function (buf, enc, next) {
     this.push(buf.toString('utf8').replace(regex, function (m, fpath) {
-      return '\'' + path.relative(process.cwd(), path.dirname(file)) +
+      var url = '\'' + path.relative(process.cwd(), path.dirname(file)) +
         '/' + fpath + '\'';
+
+      return url.replace(/^'\//, '\'');
     }));
     next();
   });
