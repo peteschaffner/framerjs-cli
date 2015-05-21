@@ -1,0 +1,114 @@
+# Javascript
+true false null this 
+new delete typeof in instanceof 
+return throw break continue debugger 
+if else switch for while do try catch finally 
+class extends super require append
+
+# Window object
+innerWidth innerHeight 
+
+# Coffee
+undefined then unless until loop of by when 
+
+# Framer _.keys(Framer)
+Utils Framer Layer Events Animation Config Defaults print 
+
+# Screen
+Screen screen
+
+# Utils _.keys(Framer.Utils)
+reset getValue setDefaultProperties valueOrDefault arrayToObject  
+arrayNext arrayPrev getTime delay interval debounce throttle  
+randomColor randomChoice randomNumber labelLayer uuid  
+arrayFromArguments cycle toggle isWebKit isTouch isMobile  
+isChrome isLocal isLocalUrl devicePixelRatio pathJoin round  
+mapRange modulate convertPoint 
+
+# Frame
+frame minX midX maxX minY midY maxY 
+
+# Events _.keys(Events)
+TouchStart TouchEnd TouchMove Click MouseOver MouseOut MouseMove Scroll on off DragEnd DragStart DragMove Move DragAnimationDidStart DragAnimationDidEnd DirectionLockDidStart ScrollStart Scroll ScrollEnd ScrollAnimationDidStart ScrollAnimationDidEnd
+
+# Layer _.keys((new Layer)._DefinedPropertiesValuesKey)
+width height visible opacity index clip scrollX scrollY ignoreEvents  
+x y z scaleX scaleY scaleZ scale originX originY  
+rotationX rotationY rotationZ blur brightness saturate hueRotate contrast  
+invert grayscale sepia backgroundColor shadowX shadowY shadowBlur shadowColor
+
+convertPoint screenFrame contentFrame centerFrame center centerX centerY pixelAlign
+style html copy image 
+superLayer subLayers siblingLayers addSubLayer removeSubLayer 
+animate animateStop 
+bringToFront sendToBack placeBefore placeBehind 
+scrollFrame 
+
+# Layer Draggable
+draggable enabled speedX speedY calculateVelocity 
+
+# State machine
+states add switch switchInstant next animationOptions StateWillSwitch StateDidSwitch current
+
+# Animation
+properties curve repeat reverse stop start AnimationStart AnimationStop AnimationEnd layer
+
+# Underscore
+# support templateSettings after assign at bind bindAll bindKey  
+# chain compact compose constant countBy create createCallback  
+# curry debounce defaults defer delay difference filter flatten  
+# forEach forEachRight forIn forInRight forOwn forOwnRight functions  
+# groupBy indexBy initial intersection invert invoke keys map  
+# mapValues max memoize merge min omit once pairs partial  
+# partialRight pick pluck property pull range reject remove  
+# rest shuffle sortBy tap throttle times toArray transform union  
+# uniq values where without wrap xor zip zipObject collect drop  
+# each eachRight extend methods object select tail unique unzip clone  
+# cloneDeep contains escape every find findIndex findKey findLast findLastIndex  
+# findLastKey has identity indexOf isArguments isArray isBoolean isDate isElement  
+# isEmpty isEqual isFinite isFunction isNaN isNull isNumber isObject isPlainObject  
+# isRegExp isString isUndefined lastIndexOf mixin noConflict noop now parseInt  
+# random reduce reduceRight result runInContext size some sortedIndex template  
+# unescape uniqueId all any detect findWhere foldl foldr include inject  
+# first last sample take head VERSION _ str camelize capitalize center  
+# chars chop classify clean count dasherize endsWith escapeHTML escapeRegExp  
+# exports humanize insert isBlank join levenshtein lines ljust lpad lrpad  
+# lstrip ltrim naturalCmp numberFormat pad prune q quote repeat rjust rpad  
+# rstrip rtrim slugify splice sprintf startsWith strLeft strLeftBack strRight  
+# strRightBack strip stripTags succ surround swapCase titleize toBool toBoolean  
+# toNumber toSentence toSentenceSerial trim truncate underscored unescapeHTML  
+# unquote vsprintf words isBool
+
+VideoLayer BackgroundLayer
+
+
+Screen Canvas
+
+# Device
+Device deviceType fullScreen orientation orientationName rotateLeft rotateRight setDeviceScale setContentScale deviceScale contentScale keyboard setKeyboard showKeyboard hideKeyboard toggleKeyboard 
+DeviceTypeDidChange DeviceFullScreenDidChange DeviceKeyboardWillShow DeviceKeyboardDidShow
+
+
+Layer
+addListener toInspect mouseWheelSpeedMultiplier velocityThreshold animationOptions constructor width height visible opacity index clip scrollHorizontal scrollVertical scroll ignoreEvents x y z scaleX scaleY scaleZ scale skewX skewY skew originX originY perspective rotationX rotationY rotationZ rotation blur brightness saturate hueRotate contrast invert grayscale sepia shadowX shadowY shadowBlur shadowSpread shadowColor backgroundColor color borderColor borderWidth force2d name borderRadius cornerRadius point size frame minX midX maxX minY midY maxY convertPoint canvasFrame screenFrame contentFrame centerFrame center centerX centerY pixelAlign canvasScaleX canvasScaleY screenScaleX screenScaleY screenScaledFrame scaledFrame style computedStyle classList html querySelector querySelectorAll destroy copy copySingle image addSubLayer removeSubLayer subLayersByName superLayers subLayersAbove subLayersBelow subLayersLeft subLayersRight animate animations animatingProperties animateStop bringToFront sendToBack placeBefore placeBehind draggable scrollFrame scrollX scrollY removeListener once removeAllListeners on off keys listeners emit
+
+BackgroundLayer
+layout addListener toInspect mouseWheelSpeedMultiplier velocityThreshold animationOptions constructor width height visible opacity index clip scrollHorizontal scrollVertical scroll ignoreEvents x y z scaleX scaleY scaleZ scale skewX skewY skew originX originY perspective rotationX rotationY rotationZ rotation blur brightness saturate hueRotate contrast invert grayscale sepia shadowX shadowY shadowBlur shadowSpread shadowColor backgroundColor color borderColor borderWidth force2d name borderRadius cornerRadius point size frame minX midX maxX minY midY maxY convertPoint canvasFrame screenFrame contentFrame centerFrame center centerX centerY pixelAlign canvasScaleX canvasScaleY screenScaleX screenScaleY screenScaledFrame scaledFrame style computedStyle classList html querySelector querySelectorAll destroy copy copySingle image addSubLayer removeSubLayer subLayersByName superLayers subLayersAbove subLayersBelow subLayersLeft subLayersRight animate animations animatingProperties animateStop bringToFront sendToBack placeBefore placeBehind draggable scrollFrame scrollX scrollY removeListener once removeAllListeners on off keys listeners emit
+
+VideoLayer
+addListener toInspect mouseWheelSpeedMultiplier velocityThreshold animationOptions player constructor video width height visible opacity index clip scrollHorizontal scrollVertical scroll ignoreEvents x y z scaleX scaleY scaleZ scale skewX skewY skew originX originY perspective rotationX rotationY rotationZ rotation blur brightness saturate hueRotate contrast invert grayscale sepia shadowX shadowY shadowBlur shadowSpread shadowColor backgroundColor color borderColor borderWidth force2d name borderRadius cornerRadius point size frame minX midX maxX minY midY maxY convertPoint canvasFrame screenFrame contentFrame centerFrame center centerX centerY pixelAlign canvasScaleX canvasScaleY screenScaleX screenScaleY screenScaledFrame scaledFrame style computedStyle classList html querySelector querySelectorAll destroy copy copySingle image addSubLayer removeSubLayer subLayersByName superLayers subLayersAbove subLayersBelow subLayersLeft subLayersRight animate animations animatingProperties animateStop bringToFront sendToBack placeBefore placeBehind draggable scrollFrame scrollX scrollY removeListener once removeAllListeners on off keys listeners emit
+
+Animation
+start options constructor stop reverse copy revert inverse invert emit animatingProperties listeners on once removeListener removeAllListeners off addListener
+
+ScrollComponent
+updateContent addListener toInspect velocityThreshold animationOptions constructor velocity scrollHorizontal scrollVertical speedX speedY isDragging isMoving propagateEvents directionLock directionLockThreshold content mouseWheelSpeedMultiplier calculateContentFrame scroll scrollX scrollY scrollPoint scrollFrame contentInset direction angle scrollToPoint scrollToTop scrollToLayer scrollToClosestLayer closestContentLayer closestContentLayerForScrollPoint removeListener on off mouseWheelEnabled copy width height visible opacity index clip ignoreEvents x y z scaleX scaleY scaleZ scale skewX skewY skew originX originY perspective rotationX rotationY rotationZ rotation blur brightness saturate hueRotate contrast invert grayscale sepia shadowX shadowY shadowBlur shadowSpread shadowColor backgroundColor color borderColor borderWidth force2d name borderRadius cornerRadius point size frame minX midX maxX minY midY maxY convertPoint canvasFrame screenFrame contentFrame centerFrame center centerX centerY pixelAlign canvasScaleX canvasScaleY screenScaleX screenScaleY screenScaledFrame scaledFrame style computedStyle classList html querySelector querySelectorAll destroy copySingle image addSubLayer removeSubLayer subLayersByName superLayers subLayersAbove subLayersBelow subLayersLeft subLayersRight animate animations animatingProperties animateStop bringToFront sendToBack placeBefore placeBehind draggable once removeAllListeners keys listeners emit
+
+PageComponent
+updateContent addListener toInspect constructor originX originY velocityThreshold animationOptions closestPage currentPage previousPage nextPage snapToPage snapToNextPage snapToPreviousPage addPage horizontalPageIndex verticalPageIndex velocity scrollHorizontal scrollVertical speedX speedY isDragging isMoving propagateEvents directionLock directionLockThreshold content mouseWheelSpeedMultiplier calculateContentFrame scroll scrollX scrollY scrollPoint scrollFrame contentInset direction angle scrollToPoint scrollToTop scrollToLayer scrollToClosestLayer closestContentLayer closestContentLayerForScrollPoint removeListener on off mouseWheelEnabled copy width height visible opacity index clip ignoreEvents x y z scaleX scaleY scaleZ scale skewX skewY skew perspective rotationX rotationY rotationZ rotation blur brightness saturate hueRotate contrast invert grayscale sepia shadowX shadowY shadowBlur shadowSpread shadowColor backgroundColor color borderColor borderWidth force2d name borderRadius cornerRadius point size frame minX midX maxX minY midY maxY convertPoint canvasFrame screenFrame contentFrame centerFrame center centerX centerY pixelAlign canvasScaleX canvasScaleY screenScaleX screenScaleY screenScaledFrame scaledFrame style computedStyle classList html querySelector querySelectorAll destroy copySingle image addSubLayer removeSubLayer subLayersByName superLayers subLayersAbove subLayersBelow subLayersLeft subLayersRight animate animations animatingProperties animateStop bringToFront sendToBack placeBefore placeBehind draggable once removeAllListeners keys listeners emit
+
+SliderComponent
+addListener toInspect mouseWheelSpeedMultiplier velocityThreshold animationOptions knob fill constructor knobSize min max value pointForValue valueForPoint animateToValue width height visible opacity index clip scrollHorizontal scrollVertical scroll ignoreEvents x y z scaleX scaleY scaleZ scale skewX skewY skew originX originY perspective rotationX rotationY rotationZ rotation blur brightness saturate hueRotate contrast invert grayscale sepia shadowX shadowY shadowBlur shadowSpread shadowColor backgroundColor color borderColor borderWidth force2d name borderRadius cornerRadius point size frame minX midX maxX minY midY maxY convertPoint canvasFrame screenFrame contentFrame centerFrame center centerX centerY pixelAlign canvasScaleX canvasScaleY screenScaleX screenScaleY screenScaledFrame scaledFrame style computedStyle classList html querySelector querySelectorAll destroy copy copySingle image addSubLayer removeSubLayer subLayersByName superLayers subLayersAbove subLayersBelow subLayersLeft subLayersRight animate animations animatingProperties animateStop bringToFront sendToBack placeBefore placeBehind draggable scrollFrame scrollX scrollY removeListener once removeAllListeners on off keys listeners emit
+
+DeviceComponent
+background phone screen viewport content keyboardLayer animationOptions fullscreen padding deviceZoom contentZoom constructor context fullScreen deviceType deviceScale contentScale orientation isPortrait isLandscape orientationName rotateLeft rotateRight keyboard showKeyboard hideKeyboard toggleKeyboard keys toInspect listeners emit on once removeListener removeAllListeners off addListener
