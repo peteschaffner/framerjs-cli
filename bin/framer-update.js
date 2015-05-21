@@ -18,7 +18,10 @@ program
 var directory = path.resolve(program.args[0] || '.');
 var projectType = require('../lib/framer_test.js')(directory);
 
-if (!projectType || projectType === 'module') return;
+if (!projectType) {
+  console.warn(colors.red('Error: ') + 'not a "framer-cli" project');
+  process.exit(1);
+} else if (projectType === 'module') process.exit(1);
 
 console.log(colors.grey('Updating Framer.js...'));
 
