@@ -1,0 +1,20 @@
+{
+  "name": "framer-module",
+  "version": "0.0.1",
+  "description": "My Framer.js module.",
+  "keywords": [
+    "prototyping",
+    "framerjs"
+  ],
+  "main": "index.js",
+  "dependencies": {
+    "framer-uilabel": "^0.1.0"
+  },
+  "devDependencies": {
+    "framer-cli": "^0.1.0"
+  },
+  "scripts": {
+    "start": "framer preview"
+  },
+  "framer": { "type": "module" }
+}

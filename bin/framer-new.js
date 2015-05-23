@@ -25,10 +25,16 @@ if (!projectType) fs.mkdirpSync(directory);
 // scaffold project/module if [dir] is empty
 if (!!!fs.readdirSync(directory).length) {
   var projectType = program.module ? 'module' : 'project';
-  var toPath = '../node_modules/framer-' + projectType;
+  var toPath = '../boilerplate/' + projectType;
 
   console.log(colors.grey('Creating %s...'), projectType);
   fs.copySync(path.resolve(__dirname, toPath), directory);
-  exec('framer update ' + directory);
+
+  // move into [dir]
+  process.chdir(directory);
+
+  console.log(colors.grey('Installing project dependencies...'));
+  exec('framer update');
+  exec('npm install');
 } else console.warn(colors.red('Error: ') + directory + ' is not empty');
 

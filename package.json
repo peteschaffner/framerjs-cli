@@ -28,8 +28,6 @@
     "commander": "^2.8.1",
     "connect": "^3.3.5",
     "connect-livereload": "^0.5.3",
-    "framer-module": "^0.1.0",
-    "framer-project": "^0.1.0",
     "fs-extra": "^0.18.3",
     "serve-index": "^1.6.4",
     "serve-static": "^1.9.3",
