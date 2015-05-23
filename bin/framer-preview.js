@@ -78,6 +78,7 @@ server.use(function (req, res, next) {
   b.bundle()
     .on('error', function(err) {
       console.error(colors.red('\nError: ') + err.message);
+      res.end('console.error("' + err.message + '")');
       this.emit('end');
     })
     .pipe(res);
