@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "babelify": "^6.0.2",
+    "basic-auth": "^1.0.1",
     "browserify": "^10.2.0",
     "chokidar": "^1.0.1",
     "coffeeify": "^1.1.0",

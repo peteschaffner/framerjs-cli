@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 
+var auth = require('basic-auth');
 var babelify = require('babelify');
 var browserify = require('browserify');
 var chokidar = require('chokidar');
@@ -75,8 +76,25 @@ if (process.env.NODE_ENV !== 'production') {
   });
 }
 
+if (process.env.NODE_ENV === 'production') {
+  server.use(function(req, res, next) {
+    var creds = auth(req);
+    var name = process.env.NAME || '';
+    var pass = process.env.PASS || '';
+
+    if (!creds || creds.name !== name || creds.pass !== pass) {
+      res.writeHead(401, {
+        'WWW-Authenticate': 'Basic realm="You have to pay the troll toll"'
+      });
+      res.end();
+    } else {
+      next();
+    }
+  });
+}
+
 // bundle on request
-server.use(function (req, res, next) {
+server.use(function(req, res, next) {
   if (req.url !== '/.bundle.js') return next();
 
   b.bundle()
