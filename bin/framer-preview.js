@@ -49,7 +49,9 @@ chokidar
   });
 
 // inject livereload.js
-server.use(livereload({ port: program.port }));
+if (process.env.NODE_ENV !== 'production') {
+  server.use(livereload({ port: program.port }));
+}
 
 // browserify
 var b = browserify({
@@ -65,11 +67,13 @@ b.transform(resolveAssetPaths, { global: true });
 if (projectType === 'module') b.require('.'); else b.add('index.js');
 
 // create build file for distribution
-b.on('bundle', function(bundle) {
-  var bundleFile = fs.createWriteStream(directory + '/.bundle.js');
+if (process.env.NODE_ENV !== 'production') {
+  b.on('bundle', function(bundle) {
+    var bundleFile = fs.createWriteStream(directory + '/.bundle.js');
 
-  bundle.pipe(bundleFile);
-});
+    bundle.pipe(bundleFile);
+  });
+}
 
 // bundle on request
 server.use(function (req, res, next) {
@@ -89,10 +93,12 @@ server.use(serveStatic(directory));
 server.use(serveIndex(directory));
 
 // livereload server
-server.use(livereloadServer.middleware({ app: server }));
+if (process.env.NODE_ENV !== 'production') {
+  server.use(livereloadServer.middleware({ app: server }));
+}
 
 // start the server
-server.listen(program.port, function () {
+server.listen(process.env.PORT || program.port, function () {
   var htmlFile = (projectType === 'module') ? 'test.html' : '';
 
   console.log(
