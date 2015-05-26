@@ -20,6 +20,7 @@ var program = require('commander');
 var serveIndex = require('serve-index');
 var serveStatic = require('serve-static');
 var through = require('through2');
+var watchify = require('watchify');
 
 
 program
@@ -54,28 +55,7 @@ if (process.env.NODE_ENV !== 'production') {
   server.use(livereload({ port: program.port }));
 }
 
-// browserify
-var b = browserify({
-  basedir: directory,
-  debug: true,
-  extensions: ['.coffee'],
-  paths: [directory + '/modules']
-});
-
-b.transform(coffeeify, { global: true });
-b.transform(babelify, { global: true });
-b.transform(resolveAssetPaths, { global: true });
-if (projectType === 'module') b.require('.'); else b.add('index.js');
-
-// create build file for distribution
-if (process.env.NODE_ENV !== 'production') {
-  b.on('bundle', function(bundle) {
-    var bundleFile = fs.createWriteStream(directory + '/.bundle.js');
-
-    bundle.pipe(bundleFile);
-  });
-}
-
+// http basic auth
 if (process.env.NODE_ENV === 'production') {
   server.use(function(req, res, next) {
     var creds = auth(req);
@@ -93,11 +73,36 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
+// browserify
+var b = browserify({
+  basedir: directory,
+  cache: {},
+  debug: true,
+  extensions: ['.coffee'],
+  packageCache: {},
+  paths: [directory + '/modules']
+});
+
+b.transform(coffeeify, { global: true });
+b.transform(babelify, { global: true });
+b.transform(resolveAssetPaths, { global: true });
+if (projectType === 'module') b.require('.'); else b.add('index.js');
+var w = watchify(b);
+
+// create build file for distribution
+if (process.env.NODE_ENV !== 'production') {
+  w.on('bundle', function(bundle) {
+    var bundleFile = fs.createWriteStream(directory + '/.bundle.js');
+
+    bundle.pipe(bundleFile);
+  });
+}
+
 // bundle on request
 server.use(function(req, res, next) {
   if (req.url !== '/.bundle.js') return next();
 
-  b.bundle()
+  w.bundle()
     .on('error', function(err) {
       console.error(colors.red('\nError: ') + err.message);
       res.end('console.error("' + err.message + '")');
