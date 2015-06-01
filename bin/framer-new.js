@@ -35,6 +35,6 @@ if (!!!fs.readdirSync(directory).length) {
 
   console.log(colors.grey('Installing project dependencies...'));
   exec('framer update');
-  exec('npm install');
+  exec('npm install --production');
 } else console.warn(colors.red('Error: ') + directory + ' is not empty');
 
