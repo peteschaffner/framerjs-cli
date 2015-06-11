@@ -1,6 +1,6 @@
 {
   "name": "framer-cli",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "A Framer.js CLI for quickly building modular prototypes.",
   "author": {
     "name": "Pete Schaffner",
