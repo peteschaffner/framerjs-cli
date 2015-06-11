@@ -84,7 +84,8 @@ var b = browserify({
 
 b.transform(coffeeify, { global: true });
 b.transform(babelify, { global: true });
-if (projectType === 'module') b.require('.'); else b.add('index.js');
+b.add('index');
+if (projectType === 'module') b.require('./index', { expose: '.' });
 var w = watchify(b);
 
 // create build file for distribution
