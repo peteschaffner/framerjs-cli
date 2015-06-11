@@ -19,7 +19,6 @@ var path = require('path');
 var program = require('commander');
 var serveIndex = require('serve-index');
 var serveStatic = require('serve-static');
-var through = require('through2');
 var watchify = require('watchify');
 
 
@@ -85,7 +84,6 @@ var b = browserify({
 
 b.transform(coffeeify, { global: true });
 b.transform(babelify, { global: true });
-b.transform(resolveAssetPaths, { global: true });
 if (projectType === 'module') b.require('.'); else b.add('index.js');
 var w = watchify(b);
 
@@ -135,21 +133,3 @@ server.listen(process.env.PORT || program.port, function () {
 });
 
 
-/**
- * A Browserify path transform so you can reference assets in your modules
- * without having to do this business: `__dirname + '/image.png'`
- */
-
-function resolveAssetPaths(file) {
-  var regex = /['"](.+\.(png|gif|jpeg|jpg|svg|mp4))['"]/ig;
-
-  return through(function (buf, enc, next) {
-    this.push(buf.toString('utf8').replace(regex, function (m, fpath) {
-      var url = '\'' + path.relative(process.cwd(), path.dirname(file)) +
-        '/' + fpath + '\'';
-
-      return url.replace(/^'\//, '\'');
-    }));
-    next();
-  });
-}
