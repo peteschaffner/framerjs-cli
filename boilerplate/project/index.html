@@ -43,6 +43,12 @@
   <body>
     <script src=".framer/framer.js"></script>
     <script>window.Framer || document.write('<script src="http://builds.framerjs.com/latest/framer.js"><\/script>')</script>
+    <script>
+    window.Framer.Defaults.DeviceView = {"deviceScale":-1,"deviceType":"fullscreen","contentScale":1,"orientation":0};
+    window.Framer.Defaults.DeviceComponent = {"deviceScale":-1,"deviceType":"fullscreen","contentScale":1,"orientation":0}
+    Framer.Device = new Framer.DeviceView();
+    Framer.Device.setupContext();
+    </script>
     <script src=".bundle.js"></script>
   </body>
 </html>
